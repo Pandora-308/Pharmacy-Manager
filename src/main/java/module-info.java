@@ -7,6 +7,7 @@ module com.pandorapharmacymanager {
     requires net.synedra.validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
+    requires java.sql;
 
     opens com.pandorapharmacymanager to javafx.fxml;
     exports com.pandorapharmacymanager;

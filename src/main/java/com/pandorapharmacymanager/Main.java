@@ -17,12 +17,11 @@ public class Main extends Application {
         Scene loginscene = new Scene(loginfxmlLoader.load(), 620, 480);
         Scene signupscene = new Scene(signupfxmlloader.load());
 
-        nonresizable(primarystage,loginscene);
+        resizable(primarystage,signupscene);
 
     }
 
     public void resizable(Stage primarystage,Scene scene){
-        primarystage.initStyle(StageStyle.UNDECORATED);
         primarystage.setResizable(true);
         primarystage.setScene(scene);
         primarystage.show();
