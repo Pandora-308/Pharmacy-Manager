@@ -1,24 +1,27 @@
 package com.pandorapharmacymanager.controller;
 
+import com.pandorapharmacymanager.database.DAOimplementations.UserDAOImplementation;
+import com.pandorapharmacymanager.model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+
+import java.sql.SQLException;
 
 public class SignUpController {
+    public Button cancelbutton;
+    public Button creataccount;
+    UserDAOImplementation userDAOImplementation = new UserDAOImplementation();
     public ChoiceBox<String> selectrole;
-    public TextField surnamefield;
     public TextField emailfield;
     public PasswordField passfield;
-    public PasswordField fassfield;
-    public TextField othernamesfield;
     public TextField phonenumberfield;
     public Label createaccountmessage;
+    public TextField namefield;
 
     @FXML
     public void initialize() {
@@ -28,33 +31,25 @@ public class SignUpController {
     }
 
     public void onenterkeypressed(KeyEvent keyEvent) {
-        if (keyEvent.getCode() == KeyCode.ENTER){
-        validator();
-        }
+
     }
 
-    public void oncreateaccountclicked(ActionEvent actionEvent) {
+    public void oncreateaccountclicked(ActionEvent actionEvent) throws SQLException {
+        String selectedRole = selectrole.getValue();
+        String email = emailfield.getText();
+        String password = passfield.getText();
+        String phoneNumber = phonenumberfield.getText();
+        String name = namefield.getText();
+
+        User user = new User(email,name,selectedRole,password,phoneNumber);
+        userDAOImplementation.addUser(user);
+        createaccountmessage.setText("Account created successfully");
     }
 
     public void oncancelclicked(ActionEvent actionEvent) {
+        Stage signupstage = (Stage) cancelbutton.getScene().getWindow();
+        signupstage.close();
     }
 
-    private void validator() {
-        if(emailfield.getText().isBlank( ) && passfield.getText().isBlank()){
-            createaccountmessage.setText("Please input a valid email and password");
-            createaccountmessage.setTextFill(Color.valueOf("#F0483E"));
-        }
-        else if ( passfield.getText().isBlank()){
-            createaccountmessage.setText("Input password");
-            createaccountmessage.setTextFill(Color.valueOf("#F0483E"));
-        }
-        else if ( emailfield.getText().isBlank()){
-            createaccountmessage.setText("Please input a valid email");
-            createaccountmessage.setTextFill(Color.valueOf("#F0483E"));
-        }
-        else {
-            createaccountmessage.setText("Login Successful;");
-            createaccountmessage.setTextFill(Color.valueOf("#009535"));
-        }
-    }
+
 }

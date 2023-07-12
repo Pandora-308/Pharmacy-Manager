@@ -1,5 +1,7 @@
 package com.pandorapharmacymanager.model;
 
+import javafx.scene.control.SingleSelectionModel;
+
 public class User {
     private String email;
     private String name;
@@ -8,12 +10,13 @@ public class User {
     private int phonenumber;
 
 
-    public User(String email, String name, String role, String password, int phonenumber) {
+    public User(String email, String name, String role, String password, String phonenumber) {
         this.email = email;
         this.name = name;
         this.role = role;
         this.password = password;
-        this.phonenumber = phonenumber;
+        this.phonenumber = Integer.parseInt(phonenumber);
+
     }
 
     public String getEmail() {

@@ -6,29 +6,17 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import java.io.IOException;
-import java.sql.SQLException;
 
 public class Main extends Application {
     @Override
     public void start(Stage primarystage) throws IOException {
         FXMLLoader loginfxmlLoader = new FXMLLoader(Main.class.getResource("login.fxml"));
-        FXMLLoader signupfxmlloader = new FXMLLoader(Main.class.getResource("SignUp.fxml"));
-
         Scene loginscene = new Scene(loginfxmlLoader.load(), 620, 480);
-        Scene signupscene = new Scene(signupfxmlloader.load());
-
         nonresizable(primarystage,loginscene);
 
     }
 
-    public void resizable(Stage primarystage,Scene scene){
-        primarystage.setResizable(true);
-        primarystage.setScene(scene);
-        primarystage.show();
-    }
-
     public void nonresizable(Stage primarystage,Scene scene){
-        primarystage.initStyle(StageStyle.UNDECORATED);
         primarystage.setResizable(false);
         primarystage.setScene(scene);
         primarystage.show();

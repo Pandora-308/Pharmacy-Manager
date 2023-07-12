@@ -1,8 +1,11 @@
 package com.pandorapharmacymanager.controller;
 
+import com.pandorapharmacymanager.Main;
 import com.pandorapharmacymanager.database.DAOimplementations.UserDAOImplementation;
-import com.pandorapharmacymanager.database.interfaces.UserDAO;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -12,10 +15,11 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Objects;
 
 public class LogInController {
+    public Button createaccount;
     UserDAOImplementation userDAOImplementation = new UserDAOImplementation();
     public TextField emailfield;
     public Button loginbutton;
@@ -75,6 +79,23 @@ public class LogInController {
         }
     }
 
+
+    public void oncreateaccountbuttonclick(ActionEvent actionEvent) {
+            // Load the sign-up stage
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("signup.fxml"));
+            try {
+                Parent root = loader.load();
+                Stage signUpStage = new Stage();
+                signUpStage.setScene(new Scene(root));
+                signUpStage.show();
+
+                // Close the login stage
+                Stage loginStage = (Stage) loginbutton.getScene().getWindow();
+                loginStage.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+    }
 
 }
 
