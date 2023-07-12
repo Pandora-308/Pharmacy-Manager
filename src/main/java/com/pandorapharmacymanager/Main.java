@@ -5,8 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class Main extends Application {
     @Override
@@ -17,7 +17,7 @@ public class Main extends Application {
         Scene loginscene = new Scene(loginfxmlLoader.load(), 620, 480);
         Scene signupscene = new Scene(signupfxmlloader.load());
 
-        resizable(primarystage,signupscene);
+        nonresizable(primarystage,loginscene);
 
     }
 
@@ -35,7 +35,7 @@ public class Main extends Application {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         launch();
     }
 }

@@ -1,44 +1,35 @@
 package com.pandorapharmacymanager.model;
 
 public class User {
-    private String id;
-    private String surname;
-    private String othernames;
+    private String email;
+    private String name;
     private String role;
-    private int phonenumber;
     private String password;
+    private int phonenumber;
 
-    public User(String id, String surname, String othernames, String role, int phonenumber, String password) {
-        this.id = id;
-        this.surname = surname;
-        this.othernames = othernames;
+
+    public User(String email, String name, String role, String password, int phonenumber) {
+        this.email = email;
+        this.name = name;
         this.role = role;
-        this.phonenumber = phonenumber;
         this.password = password;
+        this.phonenumber = phonenumber;
     }
 
-    public String getId() {
-        return id;
+    public String getEmail() {
+        return email;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getName() {
+        return name;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getOthernames() {
-        return othernames;
-    }
-
-    public void setOthernames(String othernames) {
-        this.othernames = othernames;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getRole() {
@@ -49,19 +40,19 @@ public class User {
         this.role = role;
     }
 
-    public int getPhonenumber() {
-        return phonenumber;
-    }
-
-    public void setPhonenumber(int phonenumber) {
-        this.phonenumber = phonenumber;
-    }
-
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(int phonenumber) {
+        this.phonenumber = phonenumber;
     }
 }
