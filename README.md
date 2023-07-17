@@ -15,7 +15,4 @@
 
 | Project Manager | Programmers | Ui/Ux Designer | Database Administrator |
 |-----------------|-------------|----------------|------------------------|
-| Cell 1          | Cell 2      |                |                        |
-
-
-
+| Cell 1          | Cell 2      |  10880040      |               
