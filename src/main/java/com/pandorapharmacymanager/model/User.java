@@ -1,7 +1,5 @@
 package com.pandorapharmacymanager.model;
 
-import javafx.scene.control.SingleSelectionModel;
-
 public class User {
     private String email;
     private String name;

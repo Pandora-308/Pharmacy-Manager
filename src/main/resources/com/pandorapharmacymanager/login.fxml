@@ -10,18 +10,18 @@
 
 <AnchorPane maxHeight="480.0" maxWidth="640.0" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: #0C213C;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pandorapharmacymanager.controller.LogInController">
    <children>
-      <ImageView fitHeight="45.0" fitWidth="200.0" layoutX="156.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="45.0" fitWidth="200.0" layoutX="111.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="111.0">
          <image>
             <Image url="@images/logo%20and%20title.png" />
          </image>
       </ImageView>
-      <Label layoutX="156.0" layoutY="168.0" text="Email" textFill="WHITE" />
-      <Label layoutX="156.0" layoutY="268.0" text="Password" textFill="WHITE" />
-      <TextField fx:id="emailfield" layoutX="232.0" layoutY="164.0" onKeyPressed="#onenterkeypressed" prefHeight="25.0" prefWidth="225.0" promptText="Enter Emaill" style="-fx-background-radius: 10 10 10 10;" />
-      <Button fx:id="loginbutton" layoutX="475.0" layoutY="381.0" mnemonicParsing="false" onAction="#onloginbuttonclick" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #009535; -fx-background-radius: 10 10 10 10;" text="Log in" textFill="WHITE" AnchorPane.bottomAnchor="74.0" AnchorPane.rightAnchor="65.0" />
-      <PasswordField fx:id="passfield" layoutX="232.0" layoutY="264.0" onKeyPressed="#onenterkeypressed" prefHeight="25.0" prefWidth="225.0" promptText="Enter Password" style="-fx-background-radius: 10;" />
-      <Button fx:id="cancelbutton" layoutX="345.0" layoutY="381.0" mnemonicParsing="false" onAction="#oncancelbuttonclick" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #F0483E; -fx-background-radius: 10;" text="Cancel" textFill="WHITE" AnchorPane.bottomAnchor="74.0" AnchorPane.rightAnchor="195.0" />
+      <Label layoutX="161.0" layoutY="165.0" text="Email" textFill="WHITE" />
+      <Label layoutX="161.0" layoutY="265.0" text="Password" textFill="WHITE" />
+      <TextField fx:id="emailfield" layoutX="237.0" layoutY="161.0" onKeyPressed="#onenterkeypressed" prefHeight="25.0" prefWidth="225.0" promptText="Enter Emaill" style="-fx-background-radius: 10 10 10 10;" />
+      <Button fx:id="loginbutton" layoutX="429.0" layoutY="379.0" mnemonicParsing="false" onAction="#onloginbuttonclick" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #009535; -fx-background-radius: 10 10 10 10; -fx-border-color: white; -fx-border-radius: 10;" text="Log in" textFill="WHITE" AnchorPane.rightAnchor="111.0" />
+      <PasswordField fx:id="passfield" layoutX="237.0" layoutY="261.0" onKeyPressed="#onenterkeypressed" prefHeight="25.0" prefWidth="225.0" promptText="Enter Password" style="-fx-background-radius: 10;" />
+      <Button fx:id="cancelbutton" layoutX="111.0" layoutY="379.0" mnemonicParsing="false" onAction="#oncancelbuttonclick" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #F0483E; -fx-background-radius: 10; -fx-border-color: white; -fx-border-radius: 10;" text="Cancel" textFill="WHITE" AnchorPane.leftAnchor="111.0" />
       <Label fx:id="loginmessage" layoutX="156.0" layoutY="326.0" prefHeight="25.0" prefWidth="215.0" />
-      <Button fx:id="createaccount" layoutX="475.0" layoutY="79.0" mnemonicParsing="false" onAction="#oncreateaccountbuttonclick" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: blue; -fx-background-radius: 10;" text="Create Account" textFill="WHITE" AnchorPane.rightAnchor="65.0" />
+      <Button fx:id="createaccount" layoutX="430.0" layoutY="79.0" mnemonicParsing="false" onAction="#oncreateaccountbuttonclick" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: blue; -fx-background-radius: 10; -fx-border-color: white; -fx-border-radius: 10;" text="Create Account" textFill="WHITE" AnchorPane.rightAnchor="111.0" />
    </children>
 </AnchorPane>
